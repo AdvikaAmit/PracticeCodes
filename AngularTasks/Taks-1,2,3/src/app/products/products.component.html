@@ -1,0 +1,19 @@
+<p>Products </p>
+
+<table border="2" width="500">
+         <tr>
+            <th> Product Id   </th>
+            <th> Product Name   </th>
+            <th> Product Price   </th>
+            <th> Category   </th>
+            <th> Qty   </th>
+         </tr>
+
+         <tr *ngFor="let prd of prdArray">
+             <td> {{ prd.pid }} </td>
+             <td> {{ prd.pname }} </td>
+             <td> {{ prd.price }} </td>
+             <td> {{ prd.category }} </td>
+             <td> {{ prd.qty }} </td>
+         </tr>
+</table>

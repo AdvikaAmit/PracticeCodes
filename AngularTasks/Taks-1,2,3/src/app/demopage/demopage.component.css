@@ -1,0 +1,14 @@
+.column {
+    float: left;
+    width: 32.33%;
+    text-align: center;
+    margin: 5px;
+  }
+
+  .row:after {
+
+    content: "";
+    display: table;
+    clear: both;  
+
+  }
