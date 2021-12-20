@@ -1,0 +1,12 @@
+
+<fieldset>    
+     Product Name : <input type="text" [(ngModel)]="pname"> <br/><br/>
+ 
+     Price : <input type="text" [(ngModel)]="price"> <br/><br/>
+
+     Quantity : <input type="text" [(ngModel)]="qty"> <br/><br/>
+
+     <button (click)="getTotal()">Get Total</button> <br/><br/>
+     <p> {{result}} </p>
+
+</fieldset>
