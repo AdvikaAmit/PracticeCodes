@@ -1,0 +1,81 @@
+
+<!-- <fieldset>    
+     Product Name : <input type="text" [(ngModel)]="pname"> <br/><br/>
+ 
+     Price : <input type="text" [(ngModel)]="price"> <br/><br/>
+
+     Quantity : <input type="text" [(ngModel)]="qty"> <br/><br/>
+
+     <button (click)="getTotal()">Get Total</button> <br/><br/>
+     <p> {{result}} </p>
+
+</fieldset> -->
+
+
+<fieldset>
+     <!-- <h3>Task 2</h3>  -->
+      
+     Id : <input [disabled]="isPrdDisabled" type="text" [(ngModel)]="pid" > <br/><br/>
+     Name : <input type="text" [(ngModel)]="prdname"> <br/><br/> 
+     Price : <input type="text" [(ngModel)]="prdprice"> <br/><br/>
+     Category : <input type="text" [(ngModel)]="category"> <br/><br/>
+     Quantity : <input type="text" [(ngModel)]="prdqty"> <br/><br/>
+
+     <input type="button" value="Get Product" (click)="get_product()" /> 
+     <input type="button" value="Add Product" (click)="add_product()" /> 
+     <input type="button" value="Update Product" (click)="update_product()">     
+     <input type="button" value="reset" (click)="clearFields()" /> <br/><br/>
+
+     <p> {{result}} </p>
+<!-- 
+     <table border="2" width="500">
+
+
+          <tr>
+             <th> Product Id   </th>
+             <th> Product Name   </th>
+             <th> Product Price   </th>
+             <th> Category   </th>
+             <th> Qty   </th>
+             <th>    </th>
+          </tr>
+ 
+          <tr *ngFor="let prd of prdArray">
+              <td> {{ prd.pid }} </td>
+              <td> {{ prd.pname }} </td>
+              <td> {{ prd.price }} </td>
+              <td> {{ prd.category }} </td>
+              <td> {{ prd.qty }} </td>
+              <td style="width: 300;">
+                 <a href="javascript:void(0);" (click)="selectprd_click(prd.pid)" ><img src="../../assets/edit.png" width="25px;" height="25px;" tooltip="delete-icon"></a>  |
+                  <a href="javascript:void(0);" (click)="deletePrd_Click(prd.pid)" ><img src="../../assets/delete.jfif" width="25px;" height="25px;" tooltip="delete-icon"></a>                  
+              </td>
+          </tr>
+
+          
+          <tr *nfIf="prdArray.length == 0">
+               <td colspan="3" style="color: red;">No records ound</td>
+          </tr>
+     </table> -->
+
+     
+
+     <div class="row">
+  
+          <div class="column" *ngFor="let lang of prdArray" style="background-color:linen">
+             <p > Product Id : {{ lang.pid }} </p>
+             <p> Name : {{ lang.pname }} </p>
+             <p> Price : {{ lang.price }} </p>
+             <p> Category : {{ lang.category }} </p> 
+             <p> Qty : {{ lang.qty }} </p> 
+
+             <a href="javascript:void(0);" (click)="selectprd_click(lang.pid)" ><img src="../../assets/edit.png" width="25px;" height="25px;" tooltip="delete-icon"></a>  |
+             <a href="javascript:void(0);" (click)="deletePrd_Click(lang.pid)" ><img src="../../assets/delete.jfif" width="25px;" height="25px;" tooltip="delete-icon"></a>                              
+            
+          </div>
+
+          <div class="column" *ngIf="prdArray.length == 0" style="background-color:linen">
+               <p style="color: red;"> * No Data Found </p>   
+            </div>
+ </div>
+</fieldset>
