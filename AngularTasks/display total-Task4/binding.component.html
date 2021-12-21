@@ -10,3 +10,34 @@
      <p> {{result}} </p>
 
 </fieldset>
+
+
+<fieldset>
+     <h3>Task 2</h3> 
+      
+     Id : <input type="text" [(ngModel)]="pid"> <br/><br/>
+     Name : <input type="text" [(ngModel)]="prdname"> <br/><br/> 
+     Price : <input type="text" [(ngModel)]="prdprice"> <br/><br/>
+     Category : <input type="text" [(ngModel)]="category"> <br/><br/>
+     Quantity : <input type="text" [(ngModel)]="prdqty"> <br/><br/>
+
+     <button (click)="add_product()">Add Product</button> <br/><br/>
+
+     <table border="2" width="500">
+          <tr>
+             <th> Product Id   </th>
+             <th> Product Name   </th>
+             <th> Product Price   </th>
+             <th> Category   </th>
+             <th> Qty   </th>
+          </tr>
+ 
+          <tr *ngFor="let prd of prdArray">
+              <td> {{ prd.pid }} </td>
+              <td> {{ prd.pname }} </td>
+              <td> {{ prd.price }} </td>
+              <td> {{ prd.category }} </td>
+              <td> {{ prd.qty }} </td>
+          </tr>
+ </table>
+</fieldset>
