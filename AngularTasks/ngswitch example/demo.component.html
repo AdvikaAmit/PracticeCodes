@@ -1,0 +1,90 @@
+<h3 style="text-align: center;"> Directive ngSwitch in angular</h3>
+<hr/>
+
+<style>
+    .column {
+        float: left;
+        width: 15%;
+        text-align: center;
+        margin: 5px;
+      }
+    
+      .row:after {
+    
+        content: "";
+        display: table;
+        clear: both;  
+    
+      }
+
+      .bg1{ background-color :  lightblue;  }
+  .bg2{ background-color :  lightgreen;  }
+  .bg3{ background-color :  pink;  }
+</style>
+
+<!-- Select Display Mode :
+<select [(ngModel)]="mode">
+  <option>List</option>
+  <option>Table</option>
+  <option>Card</option>  
+</select>
+<br/><br/> -->
+
+<input type="button" value="Disply List"  (click)="display('List')" />
+<input type="button" value="Display Table"  (click)="display('Table')" />
+<input type="button" value="DIsplay Card"  (click)="display('Card')" />
+
+<br/><br/>
+
+<section [ngSwitch]="mode">
+       <article *ngSwitchCase=" 'List' ">
+           <ol>
+               <li *ngFor="let emp of empArray">
+                   Employee  -
+                <span style="color:black;font-weight: bold;">{{ emp.eno}}</span>  &nbsp;&nbsp;&nbsp;
+                <span style="color: blue;font-weight: bold;">{{ emp.ename}}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <span [ngStyle]="{color:(emp.job == 'Manager' ? 'Red':'Green')}">{{ emp.job}}</span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color:brown;font-weight: bold;">{{ emp.salary}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color: orange;font-weight: bold;">{{ emp.deptno}}</span> &nbsp;&nbsp;&nbsp;
+               </li>
+           </ol>
+       </article>
+
+       <article *ngSwitchCase=" 'Table' ">
+           <table border="2" style="width: 50%;">
+               <tr>
+                  <th> Sr. No </th>
+                   <th> Employee No </th>
+                   <th> Name </th>
+                   <th> Job </th>
+                   <th> Salary </th>
+                   <th> DeptNo </th>
+               </tr>
+               <tr *ngFor="let emp of empArray let i=index; let x= even;let y=odd" 
+                          [ngClass]="{bg2:x, bg3:y}">
+                    <td>{{ i+1}}</td>
+                    <td>{{ emp.eno }}</td>
+                    <td>{{ emp.ename }}</td>
+                    <td>{{ emp.job }}</td>
+                    <td>{{ emp.salary }}</td>
+                    <td>{{ emp.deptno }}</td>
+               </tr>
+
+               <tr *ngIf="empArray.length == 0">
+                     ** No data found
+               </tr>
+           </table>
+       </article>
+
+       <article *ngSwitchCase=" 'Card' ">
+        <div class="row">  
+            <div class="column" *ngFor="let emp of empArray" style="background-color:linen">
+               <p style="color:chocolate;font-weight: bold;"> Employee no : {{ emp.eno }} </p>
+               <p style="color:green;font-weight: bold;"> Name : {{ emp.ename }} </p>
+               <p> Job : {{ emp.job }} </p>
+               <p style="color:red;font-weight: bold;"> Salary : {{ emp.salary }} </p> 
+               <p style="color:blue;font-weight: bold;"> DeptNo : {{ emp.deptno }} </p> 
+            </div>  
+            </div>             
+       </article>
+</section>

@@ -1,0 +1,48 @@
+
+<!-- <div style="background-color: lightpink; border: 1px solid black; padding: 10px;">
+    <a href="javascript:void(0);" (click)="sortbyno('eno')" >EmpNo.</a>    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:void(0);" (click)="sortbyno('ename')" >EmpName</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:void(0);" (click)="sortbyno('job')" >Job</a>       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:void(0);" (click)="sortbyno('salary')" >Salary</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:void(0);" (click)="sortbyno('deptno')" >DeptNo.</a>
+</div>
+<hr/> -->
+
+
+<div style="text-align:center;border: 1px solid black; background-color:lightblue;">
+    <ng-content></ng-content>
+</div>
+<div style="background-color: lightyellow;padding: 10px;">
+<table border="2" width="500">
+
+    <tr>
+       <th> Employee No   </th>
+       <th> Employee Name   </th>
+       <th> Emp Job   </th>
+       <th> Emp Salary   </th>
+       <th> DeptNo   </th>       
+    </tr>
+
+    <tr *ngFor="let emp of empArray">
+        <td> {{ emp.eno }} </td>
+        <td> {{ emp.ename }} </td>
+        <td> {{ emp.job }} </td>
+        <td> {{ emp.salary }} </td>
+        <td> {{ emp.deptno }} </td>        
+    </tr>
+
+    
+    <tr *nfIf="empArray.length == 0">
+         <td colspan="3" style="color: red;">No records ound</td>
+    </tr>
+</table>
+</div>
+
+<br/>
+<div class="clear:left;">
+
+</div>
+
+<div style="text-align:center;border: 1px solid black; background-color:lightblue;">
+    <ng-content select="[footer]"></ng-content>
+</div>
