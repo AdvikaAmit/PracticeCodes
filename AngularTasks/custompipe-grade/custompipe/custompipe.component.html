@@ -1,0 +1,26 @@
+<style>
+    .bg1{
+        background-color: coral;
+    }
+
+    .bg2{
+        background-color: lightgreen;
+    }
+</style>
+<div style="text-align: center;background-color: lightyellow;" >
+      <h3 style="text-align: center;">Employee Details</h3>
+      <hr/>
+
+      <table border="2" cellspacing="0" cellpadding="0" width= 500 style="text-align: center;margin-left:auto;margin-right:auto;"> 
+         <tr  class="bg1">
+             <th>Sr. No</th>
+             <th>Empoyee</th>
+             <th>Performance Grades</th>
+         </tr>
+         <tr *ngFor="let emp of empArray let i=index" class="bg2">
+            <td>{{ i + 1}}</td>
+            <td>{{ emp.ename | titlecase}}</td>
+            <td>{{ emp.grade | gradepipe}}</td>
+         </tr>
+      </table>
+</div>
