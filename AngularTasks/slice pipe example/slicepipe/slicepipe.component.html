@@ -1,0 +1,41 @@
+<style>  
+  
+    .c1
+    {
+      color : blue;
+      border:1px solid green;
+      width :  300px;
+      height: 100px;
+      margin : 5px;
+      float : left;
+      text-align : center;
+      background-color : lightyellow;
+    }
+  
+    .c2
+    {
+       background-color: green;
+       color : white;
+       margin: 10px;
+       font-weight: bold;
+       height: 30px;
+    }
+  
+  </style>
+
+<div>
+     <h3 style="text-align: center;">slice pipe example</h3>
+</div>
+
+<input type="button"  value="Load more"  (click)="loadmore_click()" />
+<br/><br/>
+
+<section>   
+    <article>
+        <div class="c1" *ngFor="let user of userArray | slice : start :end">
+          <p  class="c2">{{user.ename | titlecase}}</p>
+          <span>{{user.job | uppercase}}</span>
+          <br/>
+        </div>
+      </article>
+</section>
