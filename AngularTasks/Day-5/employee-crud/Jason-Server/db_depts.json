@@ -1,0 +1,8 @@
+{
+      "depts": 
+       [
+        { "Deptno": 10, "Dname": "Accounts", "Loc": "Hyd"},
+        { "Deptno": 20, "Dname": "Sales", "Loc": "Pune"},
+        { "Deptno": 30, "Dname": "Marketing", "Loc": "Goa"}    
+      ]
+    } 

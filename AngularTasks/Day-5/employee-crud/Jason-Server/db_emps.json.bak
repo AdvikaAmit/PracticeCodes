@@ -1,0 +1,8 @@
+{
+      "employees": 
+       [
+        { "Empno": 100123, "Empname": "Amit Shinde", "Job": "Developer"},
+        { "Empno": 100321, "Empname": "Vikram Shinde", "Loc": "Accountant"},
+        { "Empno": 102345, "Empname": "Prasad Shinde", "Loc": "Manager"}    
+      ]
+    } 

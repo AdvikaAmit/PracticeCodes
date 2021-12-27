@@ -1,0 +1,29 @@
+<p>Employee CRUD Actions --- Json server</p>
+
+<input type="text" [disabled]="isempnoDisable" [(ngModel)]="empno" placeholder="Emp No">
+<input type="text" [(ngModel)]="empname" placeholder="Emp Name">
+<input type="text" [(ngModel)]="job" placeholder="Job">
+<br/><br/>
+<input type="button" (click)="getEmp_click()" value="Get Employee" />
+<input type="button" (click)="addEmp_click()" value="Add Employee" />
+<input type="button" (click)="updateEmp_click()" value="Update Employee" />
+<input type="button" (click)="clearFields()" value="Clear" />
+<hr/>
+
+<table border="2" width="400">
+<tr>
+    <th> Emp No </th>
+    <th> Emp Name </th>
+    <th> Job</th>
+    <th>Actions</th>
+</tr>
+<tr *ngFor="let emp of empArray">
+   <td> {{ emp.empno }}  </td>
+   <td> {{ emp.empname }}  </td>
+   <td> {{ emp.job }}  </td>
+   <td>
+        <a href="javascript:void(0)" (click)="select_emp(emp.empno)">Select</a> |
+        <a href="javascript:void(0)" (click)="deleteEmp_click(emp.empno)">Delete</a>
+   </td>
+</tr>
+</table>

@@ -1,0 +1,19 @@
+{
+  "employees": [
+    {
+      "empno": 100123,
+      "empname": "Amit Shindee",
+      "job": "Developer"
+    },
+    {
+      "empno": 100321,
+      "empname": "Vikram Shinde",
+      "job": "Accountant"
+    },
+    {
+      "empno": 102345,
+      "empname": "Prasad Shinde",
+      "job": "Manager"
+    }
+  ]
+}
