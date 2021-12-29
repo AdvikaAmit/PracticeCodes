@@ -1,0 +1,55 @@
+<style>
+    .error {color: red;}
+</style>
+
+<h3 style="text-align: center;"> Angular Form validations using model driven </h3>
+<hr/>
+
+<form [formGroup]="registerForm" (submit)="submit_click()">
+    <fieldset>
+          <legend> Vehicle Registration Form </legend>
+         
+          Owner Name:
+          <input type="text" formControlName="name"  />
+          <span *ngIf="registerForm.controls['name'].invalid && registerForm.controls['name'].dirty" class="error">Owner Name is required</span>
+          
+          <br/><br/>
+
+          Contact
+          <input type="text" formControlName="contact" />          
+          <span *ngIf="registerForm.controls['contact'].invalid && registerForm.controls['contact'].dirty" class="error">valid 10 digit Contact Number is required</span>
+          <br/><br/>
+
+          Email
+          <input type="text" formControlName="email" />
+          <span class="error" *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].dirty">valid email id is required</span>
+          <br/><br/>
+
+          Registration No
+          <input type="text" formControlName="regNo" />
+          <span class="error" *ngIf="registerForm.controls['regNo'].invalid && registerForm.controls['regNo'].dirty">Registration No should be in proper format</span>
+          <br/><br/>
+
+          Address 
+          <input type="text" formControlName="address" />
+          <span class="error" *ngIf="registerForm.controls['address'].invalid && registerForm.controls['address'].dirty">address is required</span>
+          <br/><br/>
+
+          Model 
+          <input type="text" formControlName="model" />
+          <span class="error" *ngIf="registerForm.controls['model'].invalid && registerForm.controls['model'].dirty">No. of characters should be btween 3 to 10</span>
+          <br/><br/>
+
+          Color 
+          <input type="text" formControlName="color" />
+          <span class="error" *ngIf="registerForm.controls['color'].invalid && registerForm.controls['color'].dirty">Color is required</span>
+          <br/><br/> 
+          
+          Year 
+          <input type="text" formControlName="year" />    
+          <span class="error" *ngIf="registerForm.controls['year'].invalid && registerForm.controls['year'].dirty">enter valid year</span>      
+          <br/><br/> 
+    </fieldset>
+          <br/>
+         <button [disabled]="registerForm.invalid">Register</button>
+</form>
